@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let student=[
+        {
+                fullname:'นายตั้งใจ เรียนมาก',
+                age:18,
+                date:2546,
+                year:1,
+                gpa:3.40,
+                help:true
+            },
+            {
+                fullname: 'นายส่งงาน ตลอดมา',
+                age:19,
+                date:2545,
+                year:1,
+                gpa:3.00,
+                help:false
+            },
+            {
+                fullname:'นางสาวใส่ใจ ดีงาม',
+                age:20,
+                date:2545,
+                year:2,
+                gpa:2.90,
+                help:true
+            },
+            {
+                fullname:'นายตั้งใจน้อย เรียนน้อย',
+                age:20,
+                date:2545,
+                year:3,
+                gpa:2.60,
+                help:true
+            },
+            {
+                fullname:'นายติดงาน ตลอดไป',
+                age:20,
+                date:2545,
+                year:4,
+                gpa:2.50,
+                help:false
+            }
+            
+        ]
+        let born="เกิดเมื่อ"
+        let get_education_grade_help = "ได้ทุนการศึกษา เนื่องจากเกรดเฉลี่ยถึงเกณฑ์และยังช่วยงานภาควิชาด้วย"
+        let get_education_grade_nothelp ="ได้ทุนการศึกษา เนื่องจากเกรดเฉลี่ยถึงเกณฑ์เเต่ไม่ได้ช่วยงานภาควิชา"
+        let get_noteducation_notgrade_help = "ไม่ได้ทุนการศึกษา เนื่องจากเกรดเฉลี่ยไม่ถึง แต่ช่วยงานภาควิชา"
+        let get_noteducation_notgrade_notehelp = "ไม่ได้ทุนการศึกษา เนื่องจากเกรดเฉลี่ยไม่ถึง และยังไม่ได้ช่วยงานภาควิชา"    
+        let student_year ="ชั้นปี"
+        // let date = new Date();
+        // let year = date.getFullYear();
+        for(let i = 0; i<student.length; i++){
+            
+            if(student[i].gpa>=3.00 && student[i].help==true){
+                console.log(student[i].fullname,born,student[i].date,get_education_grade_help)
+            }
+            else if(student[i].gpa>=3.00 && student[i].help==false){
+                console.log(student[i].fullname,born,student[i].date,get_education_grade_nothelp)
+            }
+            else if(student[i].gpa>=2.70 && student[i].help==true){
+                console.log(student[i].fullname,born,student[i].date,get_education_grade_help)
+            }
+            else if(student[i].gpa<2.70 && student[i].help==true){
+                console.log(student[i].fullname,born,student[i].date,get_education_grade_nothelp)
+            }
+            else{
+                console.log(student[i].fullname,born,student[i].date,get_noteducation_notgrade_notehelp)
+            }
+
+        }
+        
+        student.sort((a,b) => { 
+            return a.year-b.year
+        });
+
+        let check = 0;
+        for(let i = 0; i< student.length;i++){
+            if(student[i].year != check){
+                console.log(student_year,student[i].year)
+                check = student[i].year
+        }
+            
+            if(student[i].gpa>=3.00 && student[i].help==true){
+                console.log(student[i].fullname,born,get_education_grade_help)
+            }
+            else if(student[i].gpa>=3.00 && student[i].help==false){
+                console.log(student[i].fullname,born,get_education_grade_nothelp)
+            }
+            else if(student[i].gpa>=2.70 && student[i].help==true){
+                console.log(student[i].fullname,born,get_education_grade_help)
+            }
+            else if(student[i].gpa<2.70 && student[i].help==true){
+                console.log(student[i].fullname,born,get_education_grade_nothelp)
+            }
+            else{
+                console.log(student[i].fullname,born,get_noteducation_notgrade_notehelp)
+            }
+        }
+        
+        
+    </script>
+</body>
+</html>
+Footer
+© 2022 GitHub, Inc.
+Footer navigation
+Terms
+Privacy
+Security
+Status
+Do
